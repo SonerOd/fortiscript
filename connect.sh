@@ -14,6 +14,7 @@ do
 	echo password = $PASSWORD >> $VPNFILE
 	echo trusted-cert = $TRUSTED >> $VPNFILE
     	cat ./vpnsettings.conf
+	printenv
 	echo "Connecting to vpn"
 	VPNON=""
     sudo openfortivpn -c $VPNFILE > openfortivpn.log 2>&1 &
