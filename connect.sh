@@ -4,20 +4,9 @@ VPNFILE="./vpnsettings.conf"
 VPNON=""
 while [ -z "$VPNON" ]
 do
-    echo
-	echo -e "Credentials"
-	echo -e "================================="
-	echo "Configurant"
-	echo host = $HOST > $VPNFILE
-	echo port = $PORT >> $VPNFILE
-	echo username = $USERNAME >> $VPNFILE
-	echo password = $PASSWORD >> $VPNFILE
-	echo trusted-cert = $TRUSTED >> $VPNFILE
-    	cat ./vpnsettings.conf
-	printenv
 	echo "Connecting to vpn"
 	VPNON=""
-    sudo openfortivpn -c $VPNFILE > openfortivpn.log 2>&1 &
+    sudo openfortivpn -c ./vpnsettings.conf > openfortivpn.log 2>&1 &
    COUNT=1
     while [ -z "$VPNON" ]
 	do
