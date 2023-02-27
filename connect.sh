@@ -8,11 +8,11 @@ do
 	echo -e "Credentials"
 	echo -e "================================="
 	echo "Configurant"
-	echo host = ${HOST} > $VPNFILE
-	echo port = ${PORT} >> $VPNFILE
-	echo username = ${USERNAME} >> $VPNFILE
-	echo password = ${PASSWORD} >> $VPNFILE
-	echo trusted-cert = ${TRUSTED} >> $VPNFILE
+	echo host = $HOST > $VPNFILE
+	echo port = $PORT >> $VPNFILE
+	echo username = $USERNAME >> $VPNFILE
+	echo password = $PASSWORD >> $VPNFILE
+	echo trusted-cert = $TRUSTED >> $VPNFILE
     	cat ./vpnsettings.conf
 	echo "Connecting to vpn"
 	VPNON=""
