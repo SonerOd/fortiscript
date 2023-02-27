@@ -8,11 +8,11 @@ do
 	echo -e "Credentials"
 	echo -e "================================="
 	echo "Configurant"
-	echo $HOST > $VPNFILE
-	echo $PORT >> $VPNFILE
-	echo $USERNAME >> $VPNFILE
-	echo $PASSWORD >> $VPNFILE
-	echo $TRUSTED >> $VPNFILE
+	echo host = ${HOST} > $VPNFILE
+	echo port = ${PORT} >> $VPNFILE
+	echo username = ${USERNAME} >> $VPNFILE
+	echo password = ${PASSWORD} >> $VPNFILE
+	echo trusted-cert = ${TRUSTED} >> $VPNFILE
     echo
 	echo "Connecting to vpn"
 	VPNON=""
@@ -21,7 +21,7 @@ do
     while [ -z "$VPNON" ]
 	do
 	    echo -ne "\e[33mCONNECTING TO VPN ... $COUNT\033[0K\r"
-		VPNON='ip a | grep ppp0'
+		VPNON=$(ip a | grep ppp0)
 		if [ ! -z "$VPNON" ]
 		then
             echo
