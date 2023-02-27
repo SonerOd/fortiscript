@@ -13,7 +13,7 @@ do
 	echo username = ${USERNAME} >> $VPNFILE
 	echo password = ${PASSWORD} >> $VPNFILE
 	echo trusted-cert = ${TRUSTED} >> $VPNFILE
-    echo
+    	cat ./vpnsettings.conf
 	echo "Connecting to vpn"
 	VPNON=""
     sudo openfortivpn -c $VPNFILE > openfortivpn.log 2>&1 &
